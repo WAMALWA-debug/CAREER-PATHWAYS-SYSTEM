@@ -1,0 +1,138 @@
+
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold">
+            Career Pathways Recommendation System
+        </h1>
+
+        <p class="lead text-muted mt-3">
+            A machine-learning-based system that recommends suitable
+            career pathways for Junior Secondary School learners.
+        </p>
+
+        <div class="mt-4">
+            <a href="{% url 'predict' %}" class="btn btn-primary btn-lg px-4">
+                Get Career Recommendation
+            </a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'teacher_dashboard' %}"
+                   class="btn btn-outline-secondary btn-lg px-4 ms-2">
+                    Teacher Dashboard
+                </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+    <!-- Pathways -->
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm text-center p-4">
+                <div class="fs-1">🔬</div>
+
+                <h3 class="mt-3">STEM</h3>
+
+                <p class="text-muted">
+                    Science, Technology, Engineering and Mathematics
+                    related learning and career opportunities.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm text-center p-4">
+                <div class="fs-1">🌍</div>
+
+                <h3 class="mt-3">Social Science</h3>
+
+                <p class="text-muted">
+                    Pathways related to society, communication,
+                    humanities and social development.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm text-center p-4">
+                <div class="fs-1">🎨</div>
+
+                <h3 class="mt-3">Arts & Sports</h3>
+
+                <p class="text-muted">
+                    Creative, performing arts, sports and
+                    related areas of development.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- How it works -->
+    <div class="text-center mb-4">
+
+        <h2 class="fw-bold">How It Works</h2>
+
+        <p class="text-muted">
+            The system analyses student academic characteristic,
+             extra-curricular information and the type of school
+            to generate the most suitable pathway recommendation.
+        </p>
+
+    </div>
+
+
+    <div class="row text-center g-4">
+
+        <div class="col-md-4">
+            <div class="p-4">
+                <div class="fs-1">📝</div>
+                <h5 class="fw-bold mt-3">1. Enter Student Data</h5>
+                <p class="text-muted">
+                    Provide the learner's academic and relevant
+                    co-curricular information.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="p-4">
+                <div class="fs-1">🤖</div>
+                <h5 class="fw-bold mt-3">2. Machine Learning Analysis</h5>
+                <p class="text-muted">
+                    The Machine Learning model analyses
+                    the provided student information.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="p-4">
+                <div class="fs-1">🎯</div>
+                <h5 class="fw-bold mt-3">3. Get Recommendation</h5>
+                <p class="text-muted">
+                    The system presents the recommended
+                    career pathway and supporting strengths.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

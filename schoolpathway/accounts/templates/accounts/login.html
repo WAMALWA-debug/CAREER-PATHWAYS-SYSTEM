@@ -1,0 +1,43 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h3>Student Login</h3>
+
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text"
+name="username"
+class="form-control mb-3"
+placeholder="Username"
+required>
+
+<input type="password"
+name="password"
+class="form-control mb-3"
+placeholder="Password"
+required>
+
+<button class="btn btn-primary">
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

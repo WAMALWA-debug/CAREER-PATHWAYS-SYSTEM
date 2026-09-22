@@ -1,0 +1,33 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+
+<h2>Upload Student Data</h2>
+
+</div>
+<br>
+<br>
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <input type="file"
+           name="csv_file"
+           class="form-control">
+
+    <button class="btn btn-primary mt-3">
+
+        Predict
+
+    </button>
+
+</form>
+</div>
+
+{% endblock %}

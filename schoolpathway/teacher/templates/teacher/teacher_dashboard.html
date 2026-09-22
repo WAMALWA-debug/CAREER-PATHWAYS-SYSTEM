@@ -1,0 +1,38 @@
+
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+
+<h3 class="text-center">
+Teacher Dashboard
+</h3>
+
+    </div>
+
+
+<br>
+<div class="col-md-6">
+    <a href="{% url 'upload_csv' %}" 
+    class="btn btn-success">
+        Upload Student Excel Sheet
+    </a>
+
+</div>
+<br>
+<div>
+    
+    <p class="lead text-muted text-center mt-3">
+    The Uploaded File Should be Excel. The Columns must be Labelled and Ordered Exactly as Follows:
+     GENDER, NAME, MATH, ENG, KISW, INT. SCI, PRE.TECH, AGRI, CRE, C/A, SST, SCI_PROJ, CREA_PROJ, AGR_PROJ, PRE&SCOUT, MUSIC&DRAMA, SPORTS, SCH. TYPE
+
+                </p>
+                
+</div>
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,200 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h3 class="text-center">
+
+Student Career Pathway Prediction
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Name</label>
+
+<input type="text"
+name="student_name"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Gender</label>
+
+<select class="form-select"
+name="GENDER">
+
+<option value="1">Male</option>
+<option value="0">Female</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Math" name="MATH">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="English" name="ENG">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Kiswahili" name="KISW">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Science" name="INT. SCI">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Pre-Tech" name="PRE.TECH">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Agriculture" name="AGRI">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="CRE" name="CRE">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Creative Arts" name="C/A">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="SST" name="SST">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Science Project" name="SCI_PROJ">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Creative Arts Project" name="CREA_PROJ">
+</div>
+
+<div class="col-md-4 mb-3">
+<input type="number" class="form-control" placeholder="Agriculture Project" name="AGR_PROJ">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+
+<select class="form-select"
+name="PRE&SCOUT">
+
+<option value="1">Prefect or Scout</option>
+<option value="0">Not Prefect or Scout</option>
+
+</select>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<select class="form-select"
+name="MUSIC&DRAMA">
+
+<option value="1">Music and Drama</option>
+<option value="0">No Music nor Drama</option>
+
+</select>
+
+</div>
+
+
+<div class="col-md-4 mb-3">
+
+<select class="form-select"
+name="SPORTS">
+
+<option value="1">Sports</option>
+<option value="0">No Sports</option>
+
+</select>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<select class="form-select"
+name="SCH. TYPE">
+
+<option value="0">Private</option>
+<option value="1">Public</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="d-grid">
+
+<button type="submit"
+class="btn btn-success">
+
+Predict Pathway
+
+</button>
+
+</div>
+
+</form>
+
+{% if prediction is not None %}
+
+<div class="alert alert-success mt-4">
+
+<h4 class="text-center">
+
+Recommended Pathway:
+{{ prediction }}
+
+</h4>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-header bg-success text-white">
+
+        <h2>
+
+            Recommended Pathway
+
+        </h2>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="alert alert-success">
+
+            <h1 class="text-center">
+
+                {{ prediction }}
+
+            </h1>
+
+        </div>
+
+
+
+        <h4>
+
+            Strong Subjects
+
+        </h4>
+
+        <ul>
+
+            {% for subject, score in top_subjects %}
+
+            <li>
+
+                {{ subject }} ({{ score }}%)
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+        
+        <h4>
+            Strengths
+        </h4>
+
+        <ul>
+            {% for strength in strengths %}
+            <li>{{strength}}</li>
+            {% endfor %}
+        </ul>
+
+        <h4>Co-curricular Strength Factors</h4>
+
+        <ul>
+        {% for factor in strength_factors %}
+        <li>{{ factor }}</li>
+        {% endfor %}
+        </ul>
+
+        <h4>
+
+            Why This Pathway?
+
+        </h4>
+
+        <p>
+
+            {{ explanation }}
+
+        </p>
+
+
+
+        <h4>
+
+            Career Opportunities
+
+        </h4>
+
+        <ul>
+
+            {% for career in careers %}
+
+            <li>
+
+                {{ career }}
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        <h4>
+
+            Career Prospects
+
+        </h4>
+
+        <p>
+
+            {{ prospects }}
+
+        </p>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

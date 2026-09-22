@@ -1,0 +1,39 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<h2>Prediction Results</h2>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Name</th>
+<th>Recommended Pathway</th>
+
+</tr>
+
+{% for row in results %}
+
+<tr>
+
+<td>{{ row.NAME }}</td>
+
+<td>
+{{ row.RECOMMENDED_PATHWAY }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="{% url 'download_pdf' %}"
+class="btn btn-danger">
+
+Download PDF
+
+</a>
+
+{% endblock %}
